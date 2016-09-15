@@ -2,7 +2,10 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:macro name="schunk_sdh_gazebo" params="name prefix:=''">
+    <xacro:include filename="$(find schunk_description)/urdf/gazebo.urdf.xacro" />
     <xacro:property name="prefix_" value="${'' if prefix=='' else prefix+'_'}"/>
+    
+    <xacro:schunk_gazebo_ros_control namespace="${prefix}" />
 
     <gazebo reference="${prefix_}${name}_palm_link">
       <gravity>true</gravity>
