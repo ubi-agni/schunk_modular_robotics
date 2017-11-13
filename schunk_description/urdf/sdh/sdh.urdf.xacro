@@ -4,6 +4,8 @@
   <xacro:include filename="$(find schunk_description)/urdf/common.xacro" />
   <xacro:include filename="$(find schunk_description)/urdf/sdh/sdh.gazebo.xacro" />
   <xacro:include filename="$(find schunk_description)/urdf/sdh/sdh.transmission.xacro" />
+  <!-- will fail to load if already included -->
+  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
 
   <xacro:macro name="schunk_sdh" params="parent name *origin">
 
